@@ -1,73 +1,34 @@
 #ifndef _CARD_H_
 #define _CARD_H_
-
-#include <string>
-#include <vector>
 #include "type.h"
+#include <string>
+class Player;
 
-Class Card : public Observer
+enum class CType {Ritual, Minion, Spell, Enchant}
+
+class Card
 {
 protected:
 	string name;
 	int cost; // since each card has a cost and a name for sure
-
-	string Active;
-	string Trigger;
-	// if the card does not have the related ability, 
-	// use string "noAbility" to represent
+	shared_ptr<Player> opponent;
+	
+	vector<shared_ptr<Minion>> targetM;
+	vector<shared_ptr<Ritual>> targetR;
+	// each card has a array of possible target to attack or effect.
 	
 public:
-	Card(int cost,string name,string Active,string Trigger);
-	~Card();
+	void addTarget(shared_ptr<Card> c);
+	Card(int cost,string name);
+	void addOpponent(shared_ptr<Player> p);
+	virtual ~Card() = default;
+	virtual Ctype getType() = 0;
 	virtual void useAbility(AbilityType t,Subject &owner) = 0;
+	// the effect differs based on the type of ability it uses.
+	virtual bool isTrigger() = 0;
 	// idea here is that each card is observer of its owner
 
 	string getName();
 };
 
-Class Minion : public Card
-{
-protected:
-	int atk, def;
-	int action;
-
-public:
-	Minion(int cost,int atk,int def, string Name, string Active, string Trigger);
-	virtual ~Minion() = 0;
-	int getLife();
-	void takeAtk(int);
-	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-};
-
-Class Ritual : public Card
-{
-protected:
-	int charge;
-
-public:
-	Ritual(int cost,int charge,string name, string Trigger);
-	virtual ~Ritual() = 0;
-	int getCharge();
-	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-
-};
-
-// the rest two are for you guys
-Class Spell : public Card
-{
-public:
-	Spell(int cost, string name);
-	virtual ~Spell() = 0;
-	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-};
-
-Class Enchantment : public Card
-{
-public:
-	Enchantment(int cost, string name);
-	virtual ~Enchantment() = 0;
-	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-};
 #endif
-
-
