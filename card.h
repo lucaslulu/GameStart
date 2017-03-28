@@ -5,7 +5,7 @@
 #include <vector>
 #include "type.h"
 
-Class Card : public Observer
+class Card : public Observer
 {
 protected:
 	string name;
@@ -25,7 +25,7 @@ public:
 	string getName();
 };
 
-Class Minion : public Card
+class Minion : public Card
 {
 protected:
 	int atk, def;
@@ -39,7 +39,7 @@ public:
 	virtual void useAbility(AbilityType t, Subject &owner) = 0;
 };
 
-Class Ritual : public Card
+class Ritual : public Card
 {
 protected:
 	int charge;
@@ -52,7 +52,18 @@ public:
 
 };
 
-// the rest two are for you guys
+class Spell : public Card
+{
+public:
+	Spell(int cost, string name, string Active);
+	virtual ~Spell() = 0;
+	virtual void useAbility(AbilityType t, Subject &owner) = 0;
+	
+};
+
+class Enchantment: public Card
+{
+pu
 #endif
 
 
