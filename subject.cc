@@ -1,19 +1,29 @@
 #include "subject.h"
-#include "observer.h"
+#include "card.h"
 #include "type.h"
 
 Subject::~Subject{}
 
-void Subject::load(Observer *o) { observers.emplace_back(o); }
+void Subject::load(Card *c) { cards.emplace_back(o); }
 
-void Subject::Activate(AbilityType t, string name)
+void Subject::TriggerOn()
 {
-	for(auto O : observers)
+	for(auto O : cards)
 	{
-		if(O->getName() == name)
+		if(O->isTrigger() == true)
 		{
-			O->useAbility(t,*this);
+			O->useAbility(AbilityType::Trigger);
 		}
 	}
 }
 
+void Subject::Activate(string name)
+{
+	for(auto O : cards)
+	{
+		if(O->getname() == name)
+		{
+			O->useAbility(AbilityType::Active);
+		}
+	}
+}
