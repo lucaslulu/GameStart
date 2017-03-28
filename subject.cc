@@ -4,7 +4,7 @@
 
 Subject::~Subject{}
 
-void Subject::load(Card *c) { cards.emplace_back(o); }
+void Subject::load(shared_ptr<Card> o) { cards.emplace_back(o); }
 
 void Subject::TriggerOn()
 {
