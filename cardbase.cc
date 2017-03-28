@@ -13,12 +13,22 @@ void Minion::takeAtk(int damege)
   def -= damege;
 }
 
+Ctype Minion::getType()
+{
+	return Ctype::Minion;
+}
+
 Ritual::Ritual(int cost,int activepoint,int charge,string name)
   : card(cost,Name), activepoint{activepoint}, charge{charge} {}
   
 int Ritual::getCharge()
 {
   return charge;
+}
+
+Ctype Ritual::getType()
+{
+	return Ctype::Ritual;
 }
 
 Spell::Spell(int cost, string name)
@@ -29,6 +39,11 @@ bool Spell::isTrigger()
   return false;
 }
 
+Ctype Spell::getType()
+{
+	return Ctype::Spell;
+}
+
 Enchantment::Enchantment(int cost, string name)
   : card(cost,Name) {}
   
@@ -37,3 +52,7 @@ bool Enchantment::isTrigger()
   return false;
 }
 
+Ctype Enchantment::getType()
+{
+	return Ctype::Enchant;
+}

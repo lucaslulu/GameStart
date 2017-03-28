@@ -19,6 +19,7 @@ public:
 	int getLife();
 	void takeAtk(int);
 	virtual void useAbility(AbilityType t, Subject &owner) = 0;
+	Ctype getType();
 	virtual bool isTrigger() = 0;
 };
 
@@ -29,11 +30,11 @@ protected:
 	int activepoint;
 	
 public:
-	Ritual(int cost,int activepoint,int charge,string name, string Trigger);
+	Ritual(int cost,int activepoint,int charge,string name);
 	virtual ~Ritual() = 0;
 	int getCharge();
 	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-	virtual void useAbility(AbilityType t, Subject &owner, string name) = 0;
+	Ctype getType();
 	virtual bool isTrigger() = 0;
 };
 
@@ -43,7 +44,7 @@ public:
 	Spell(int cost, string name, string Active);
 	virtual ~Spell() = 0;
 	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-	virtual void useAbility(AbilityType t, Subject &owner, string name) = 0;
+	Ctype getType();
 	bool isTrigger() override;
 };
 
@@ -52,8 +53,8 @@ class Enchantment: public Card
 public:
 	Enchantment(int cost, string name, string Active);
 	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-	virtual void useAbility(AbilityType t, Subject &owner,string name) = 0;
 	virtual ~Enchantment() = 0;
+	Ctype getType();
 	bool isTrigger() override;
 };
 #endif
