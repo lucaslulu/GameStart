@@ -5,10 +5,11 @@
 class Air_Elemental : public minion{
 
 public:
-	Air_Elemental(int cost, int atk, int def, string name, string Active, string Trigger);
+	Air_Elemental(int cost, int atk, int def, string name);
 	~Air_Elemental();
-	useAbility(AbilityType t, Subject &owner);
-
+	bool isTrigger(Player &owner);
+	void useAbility(AbilityType t, Player &owner);
+	void useAbility(AbilityType t, Player &owner, string name);
 };
 
 #endif
