@@ -10,7 +10,8 @@ class Subject {
 public:
 	void load(Observer *o);
 	// every card drawed from deck became a observer of subject
-	void Activate(AbilityType t, string name);
+	void Activate(string name);
+	void TriggerOn();
 	virtual ~Subject() = 0;
 };
 
