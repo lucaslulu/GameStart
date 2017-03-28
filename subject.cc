@@ -27,3 +27,14 @@ void Subject::Activate(string name)
 		}
 	}
 }
+
+void Subject::Activate(string name,string target)
+{
+	for(auto O : cards)
+	{
+		if(O->getname() == name)
+		{
+			O->useAbility(AbilityType::Active,*this,target);
+		}
+	}
+}
