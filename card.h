@@ -1,5 +1,7 @@
 #ifndef _CARD_H_
 #define _CARD_H_
+#include "type.h"
+#include <string>
 class Subject;
 class Player;
 
