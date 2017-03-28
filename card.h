@@ -53,6 +53,7 @@ public:
 };
 
 // the rest two are for you guys
+Class
 #endif
 
 
