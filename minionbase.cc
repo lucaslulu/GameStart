@@ -1,4 +1,4 @@
-#include "minion.h"
+#include "minionbase.h"
 
 Air_Elemental::Air_Elemental(int cost, int atk, int def, int pos,string name)
   : card(1,"Air Elemental"), atk{0}, def{1}, pos{pos} {}
