@@ -18,7 +18,7 @@ public:
 	Card(int cost,string name,string Active,string Trigger);
 	virtual ~Card() = default;
 	virtual void useAbility(AbilityType t,Subject &owner) = 0;
-	virtual bool isTrigger();
+	virtual bool isTrigger() = 0;
 	// idea here is that each card is observer of its owner
 
 	string getName();
