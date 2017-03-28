@@ -53,6 +53,21 @@ public:
 };
 
 // the rest two are for you guys
+Class Spell : public Card
+{
+public:
+	Spell(int cost, string name);
+	virtual ~Spell() = 0;
+	virtual void useAbility(AbilityType t, Subject &owner) = 0;
+};
+
+Class Enchantment : public Card
+{
+public:
+	Enchantment(int cost, string name);
+	virtual ~Enchantment() = 0;
+	virtual void useAbility(AbilityType t, Subject &owner) = 0;
+};
 #endif
 
 
