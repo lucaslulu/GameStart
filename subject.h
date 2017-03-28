@@ -11,6 +11,7 @@ public:
 	void load(Observer *o);
 	// every card drawed from deck became a observer of subject
 	void Activate(string name);
+	void Activate(string name, string target);
 	void TriggerOn();
 	virtual ~Subject() = 0;
 };
