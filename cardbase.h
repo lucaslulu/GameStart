@@ -14,12 +14,11 @@ protected:
 	int action;
 
 public:
-	Minion(int cost,int atk,int def, string Name, string Active, string Trigger);
+	Minion(int cost,int atk,int def, string Name);
 	virtual ~Minion() = 0;
 	int getLife();
 	void takeAtk(int);
 	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-	virtual void useAbility(AbilityType t, Subject &owner, string name) = 0;
 	virtual bool isTrigger() = 0;
 };
 
