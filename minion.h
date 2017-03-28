@@ -1,5 +1,5 @@
-#ifndef _CARDBASE_H_
-#define _CARDBASE_H_
+#ifndef _MINION_H_
+#define _MINION_H_
 #include "card.h"
 
 class Air_Elemental : public minion{
