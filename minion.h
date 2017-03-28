@@ -2,39 +2,39 @@
 #define _CARDBASE_H_
 #include "card.h"
 
-class Air_Element : public minion{
+class Air_Elemental : public minion{
 
 public:
-	Air_Element(int cost, int atk, int def, string name, string Active, string Trigger);
-	~Air_Element();
+	Air_Elemental(int cost, int atk, int def, string name, string Active, string Trigger);
+	~Air_Elemental();
 	useAbility(AbilityType t, Subject &owner);
 
 };
 
-class Fire_Element : public minion{
+class Fire_Elemental : public minion{
 
 public:
-	Fire_Element(int cost, int atk, int def, string name, string Active, string Trigger);
-	~Fire_Element();
+	Fire_Elemental(int cost, int atk, int def, string name, string Active, string Trigger);
+	~Fire_Elemental();
 	useAbility(AbilityType t, Subject &owner);
 
 };        
 
-class Water_Element : public minion{
+class Water_Elemental : public minion{
 
 public:
-	Water_Element(int cost, int atk, int def, string name, string Active, string Trigger);
-	~Water_Element();
+	Water_Elemental(int cost, int atk, int def, string name, string Active, string Trigger);
+	~Water_Elemental();
 	useAbility(AbilityType t, Subject &owner);
 
 };
 
 
-class Ice_Element : public minion{
+class Ice_Elemental : public minion{
 
 public:
-	Ice_Element(int cost, int atk, int def, string name, string Active, string Trigger);
-	~Ice_Element();
+	Ice_Elemental(int cost, int atk, int def, string name, string Active, string Trigger);
+	~Ice_Elemental();
 	useAbility(AbilityType t, Subject &owner);
 
 }; 
@@ -58,21 +58,21 @@ public:
 };
 
 
-class Earth_Element : public minion{
+class Earth_Elemental : public minion{
 
 public:
-	Earth_Element(int cost, int atk, int def, string name, string Active, string Trigger);
-	~Earth_Element();
+	Earth_Elemental(int cost, int atk, int def, string name, string Active, string Trigger);
+	~Earth_Elemental();
 	useAbility(AbilityType t, Subject &owner);
 
 };    
 
 
-class Unknown_Element : public minion{
+class Unknown_Elemental : public minion{
 
 public:
-	Unknown_Element(int cost, int atk, int def, string name, string Active, string Trigger);
-	~Unknown_Element();
+	Unknown_Elemental(int cost, int atk, int def, string name, string Active, string Trigger);
+	~Unknown_Elemental();
 	useAbility(AbilityType t, Subject &owner);
 
 };        
