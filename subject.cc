@@ -12,7 +12,7 @@ void Subject::TriggerOn()
 	{
 		if(O->isTrigger() == true)
 		{
-			O->useAbility(AbilityType::Trigger);
+			O->useAbility(AbilityType::Trigger,*this);
 		}
 	}
 }
@@ -23,7 +23,7 @@ void Subject::Activate(string name)
 	{
 		if(O->getname() == name)
 		{
-			O->useAbility(AbilityType::Active);
+			O->useAbility(AbilityType::Active,*this);
 		}
 	}
 }
