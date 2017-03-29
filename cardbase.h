@@ -20,7 +20,7 @@ public:
 	void takeAtk(int);
 //	virtual void useAbility(AbilityType t, Subject &owner) = 0;
 	CType getType() override;
-	virtual bool isTrigger() override;
+	virtual bool isTrigger(Player &owner) override;
 };
 
 class Ritual : public Card
@@ -35,7 +35,7 @@ public:
 	int getCharge();
 //	virtual void useAbility(AbilityType t, Subject &owner) = 0;
 	CType getType() override;
-    virtual bool isTrigger() override;
+    virtual bool isTrigger(Player &owner) override;
 };
 
 class Spell : public Card
@@ -45,7 +45,7 @@ public:
 	virtual ~Spell() = 0;
 //	virtual void useAbility(AbilityType t, Subject &owner) = 0;
 	CType getType() override;
-	bool isTrigger() override;
+	bool isTrigger(Player &owner) override;
 };
 
 class Enchantment: public Card
@@ -55,7 +55,7 @@ public:
 //	virtual void useAbility(AbilityType t, Subject &owner) = 0;
 	virtual ~Enchantment() = 0;
 	CType getType() override;
-	bool isTrigger() override;
+	bool isTrigger(Player &owner) override;
 };
 #endif
 
