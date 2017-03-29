@@ -1,6 +1,7 @@
 #include "minionbase.h"
+using namespace std;
 
-Air_Elemental::Air_Elemental(int cost, int atk, int def, int pos,string name)
+Air_Elemental::Air_Elemental(int cost, int atk, int def, int pos,string name,string description)
   : card(1,"Air Elemental"), atk{0}, def{1}, pos{pos} {}
   
 Air_Elemental::~Air_Elemental() {}

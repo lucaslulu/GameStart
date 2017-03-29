@@ -5,22 +5,22 @@
 #include <vector>
 #include "card.h"
 #include "type.h"
-using namespace std;
+
 
 class Minion : public Card
 {
 protected:
-	int atk, def;
+	int atk, def; // attack and defend
 	int action;
 
 public:
-	Minion(int cost,int atk,int def, string Name);
+    Minion(int cost,int atk,int def, std::string name,std::string description);
 	virtual ~Minion() = 0;
 	int getLife();
 	void takeAtk(int);
-	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-	Ctype getType();
-	virtual bool isTrigger() = 0;
+//	virtual void useAbility(AbilityType t, Subject &owner) = 0;
+	CType getType() override;
+	virtual bool isTrigger() override;
 };
 
 class Ritual : public Card
@@ -30,31 +30,31 @@ protected:
 	int activepoint;
 	
 public:
-	Ritual(int cost,int activepoint,int charge,string name);
+	Ritual(int cost,int activepoint,int charge,std::string name,std::string description);
 	virtual ~Ritual() = 0;
 	int getCharge();
-	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-	Ctype getType();
-	virtual bool isTrigger() = 0;
+//	virtual void useAbility(AbilityType t, Subject &owner) = 0;
+	CType getType() override;
+    virtual bool isTrigger() override;
 };
 
 class Spell : public Card
 {
 public:
-	Spell(int cost, string name, string Active);
+	Spell(int cost, std::string name, std::string Active,std::string description);
 	virtual ~Spell() = 0;
-	virtual void useAbility(AbilityType t, Subject &owner) = 0;
-	Ctype getType();
+//	virtual void useAbility(AbilityType t, Subject &owner) = 0;
+	CType getType() override;
 	bool isTrigger() override;
 };
 
 class Enchantment: public Card
 {
 public:
-	Enchantment(int cost, string name, string Active);
-	virtual void useAbility(AbilityType t, Subject &owner) = 0;
+	Enchantment(int cost, std::string name, std::string Active,std::string description);
+//	virtual void useAbility(AbilityType t, Subject &owner) = 0;
 	virtual ~Enchantment() = 0;
-	Ctype getType();
+	CType getType() override;
 	bool isTrigger() override;
 };
 #endif

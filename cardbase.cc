@@ -1,7 +1,8 @@
 #include "cardbase.h"
+using namespace std;
 
-Minion::Minion(int cost,int atk,int def,string Name)
-  : card(cost,Name), atk{atk}, def{def}, action{1} {}
+Minion::Minion(int cost,int atk,int def,string Name,string description)
+: Card(cost,Name,description), atk{atk}, def{def}, action{1} {}
   
 int Minion::getLife()
 {
@@ -13,46 +14,50 @@ void Minion::takeAtk(int damege)
   def -= damege;
 }
 
-Ctype Minion::getType()
+CType Minion::getType()
 {
-	return Ctype::Minion;
+	return CType::Minion;
 }
 
-Ritual::Ritual(int cost,int activepoint,int charge,string name)
-  : card(cost,Name), activepoint{activepoint}, charge{charge} {}
+bool Minion::isTrigger(){
+    return 0; // just for test
+}
+
+Ritual::Ritual(int cost,int activepoint,int charge,string name,string description)
+  : Card(cost,name,description), activepoint{activepoint}, charge{charge} {}
   
 int Ritual::getCharge()
 {
   return charge;
 }
 
-Ctype Ritual::getType()
+CType Ritual::getType()
 {
-	return Ctype::Ritual;
+	return CType::Ritual;
 }
 
-Spell::Spell(int cost, string name)
-  : card(cost,Name) {}
+Spell::Spell(int cost, string name,string Active, string description)
+: Card(cost,name,description), Active{Active} {}
   
 bool Spell::isTrigger()
 {
   return false;
 }
 
-Ctype Spell::getType()
+CType Spell::getType()
 {
-	return Ctype::Spell;
+	return CType::Spell;
 }
 
-Enchantment::Enchantment(int cost, string name)
-  : card(cost,Name) {}
+Enchantment::Enchantment(int cost, string name,string description)
+: Card(cost,name,description) {}
   
 bool Enchantment::isTrigger()
 {
   return false;
 }
 
-Ctype Enchantment::getType()
+CType Enchantment::getType()
 {
-	return Ctype::Enchant;
+	return CType::Enchant;
 }

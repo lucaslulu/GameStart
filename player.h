@@ -1,15 +1,15 @@
 #ifndef _PLAYER_H_
 #define _PLAYER_H_
 #include "card.h"
+#include <vector>
 #include "cardbase.h"
-using namespace std;
 
 class Player
 {	
-	vector<shared_ptr<Card>> cards;
-	int health;
+    std::vector<shared_ptr<Card>> cards;
+	int health = 20;
 
-	vector <shared_ptr<Minion>> field;
+    std::vector <shared_ptr<Minion>> field;
 	vector <shared_ptr<Minion>> grave;
 	ritual* secret;
 	vector <shared_ptr<Card>> hand;
