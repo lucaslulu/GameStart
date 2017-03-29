@@ -19,9 +19,9 @@ CType Minion::getType()
 	return CType::Minion;
 }
 
-bool Minion::isTrigger(){
-    return 0; // just for test
-}
+//bool Minion::isTrigger(Player &owner){
+//    return 0; // just for test
+//}
 
 Ritual::Ritual(int cost,int activepoint,int charge,string name,string description)
   : Card(cost,name,description), activepoint{activepoint}, charge{charge} {}
@@ -39,7 +39,7 @@ CType Ritual::getType()
 Spell::Spell(int cost, string name,string Active, string description)
 : Card(cost,name,description), Active{Active} {}
   
-bool Spell::isTrigger()
+bool Spell::isTrigger(Player &owner)
 {
   return false;
 }
@@ -52,7 +52,7 @@ CType Spell::getType()
 Enchantment::Enchantment(int cost, string name,string description)
 : Card(cost,name,description) {}
   
-bool Enchantment::isTrigger()
+bool Enchantment::isTrigger(Player &owner)
 {
   return false;
 }
