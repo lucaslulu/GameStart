@@ -1,14 +1,15 @@
 #include "card.h"
+using namespace std;
 
-Card::Card(int cost,string name)
-  : name{name}, cost{cost} {}
+Card::Card(int cost,string name,string description)
+  : name{name}, cost{cost}, description(description) {}
   
 void Card::addTarget(shared_ptr<Card> c)
 {
-  if(c->getType() == Ctype::Minion)
+  if(c->getType() == CType::Minion)
   {
   	targetM.emplace_back(c);
-  } else if(c->getType() == Ctype::Ritual)
+  } else if(c->getType() == CType::Ritual)
   {
   	targetM.emplace_back(c);
   }
@@ -18,5 +19,8 @@ void Card::addTarget(shared_ptr<Card> c)
  {
     return name;
  }
- 
+
+string Card::getdestription(){
+    return description;
+}
  
