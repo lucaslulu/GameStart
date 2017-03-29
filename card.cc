@@ -1,8 +1,11 @@
 #include "card.h"
 using namespace std;
 
-Card::Card(int cost,string name,string description)
-  : name{name}, cost{cost}, description(description) {}
+Card::Card(int cost,string name)
+  : name{name}, cost{cost}
+{
+  description = "";
+}
   
 void Card::addTarget(shared_ptr<Card> c)
 {
@@ -15,12 +18,17 @@ void Card::addTarget(shared_ptr<Card> c)
   }
 }
 
+void setDesription(string d)
+{
+  description += d;
+}
+
  string Card::getName()
  {
     return name;
  }
 
-string Card::getdestription(){
+string Card::getdescription(){
     return description;
 }
  

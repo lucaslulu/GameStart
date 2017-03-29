@@ -1,0 +1,48 @@
+#include "minion.h"
+using namespace std;
+
+Minion::Minion(int cost,int atk,int def,string Name)
+: Card(cost,Name), atk{atk}, def{def}, action{1} {}
+  
+int Minion::getAtk()
+{
+	return atk;
+}
+
+int Minion::getLife()
+{
+  return def;
+}
+
+void Minion::NewTurn()
+{
+	action = 1;
+}
+
+void Minion::attack(std::shared_ptr<Minion> m)
+{
+	if(action == 0)
+	{
+		return;
+	}
+
+	takeAtk(m->getAtk());
+	m->takeAtk(atk);
+	action -= 1;
+}
+
+void Minion::takeAtk(int damege)
+{
+  def -= damege;
+}
+
+CType Minion::getType()
+{
+	return CType::Minion;
+}
+
+bool Minion::isTrigger(Player &owner){
+    return 0; // just for test
+}
+
+
