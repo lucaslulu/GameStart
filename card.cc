@@ -20,7 +20,7 @@ void Card::addTarget(shared_ptr<Card> c)
 
 void Card::setDescription(string d)
 {
-  description += d;
+  description = d;
 }
 
  string Card::getName()
