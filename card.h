@@ -31,7 +31,7 @@ public:
 	virtual CType getType() = 0;
 	//virtual void useAbility(AbilityType t,Subject &owner) = 0;
 	// the effect differs based on the type of ability it uses.
-	virtual bool isTrigger() = 0;
+	virtual bool isTrigger(Player &owner) = 0;
 	// idea here is that each card is observer of its owner
 
 	std::string getName();  // return name of card
