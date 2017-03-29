@@ -19,9 +19,9 @@ CType Minion::getType()
 	return CType::Minion;
 }
 
-//bool Minion::isTrigger(Player &owner){
-//    return 0; // just for test
-//}
+bool Minion::isTrigger(Player &owner){
+    return 0; // just for test
+}
 
 Ritual::Ritual(int cost,int activepoint,int charge,string name,string description)
   : Card(cost,name,description), activepoint{activepoint}, charge{charge} {}
