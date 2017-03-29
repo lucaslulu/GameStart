@@ -7,9 +7,9 @@ class Player;
 
 enum class CType {Ritual, Minion, Spell, Enchantment};
 
-//class Minion;
+class Minion;
 
-//class Ritual;
+class Ritual;
 
 class Card
 {
@@ -19,8 +19,8 @@ protected:
 	int cost; // since each card has a cost and a name for sure
 	std::shared_ptr<Player> opponent;
 	
-//	std::vector<std::shared_ptr<Minion>> targetM;
-//	std::vector<std::shared_ptr<Ritual>> targetR;
+	std::vector<std::shared_ptr<Minion>> targetM;
+	std::vector<std::shared_ptr<Ritual>> targetR;
 	// each card has a array of possible target to attack or effect.
 	
 public:
