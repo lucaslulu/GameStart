@@ -42,3 +42,27 @@ void Player::Active(string name, shared_ptr<Minion> target)
 		}
 	}
 }
+
+void Player::gotograve(shared_ptr<Minion> m)
+{
+	grave.emplace_back(m);
+}
+
+void Player::takeDamage(int d)
+{
+	health -= d;
+}
+	
+int Player::getLife()
+{
+	return health;
+}
+
+void damegeO(int d); // deal damage to opponent
+{
+	opponent->takeDamage(d);
+}
+void heal(int h) // heal for player
+{
+	health += h;
+}

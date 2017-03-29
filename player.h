@@ -3,10 +3,13 @@
 #include "card.h"
 #include <vector>
 #include "cardbase.h"
+#include "factory.h"
 
 class Player
 {	
-    std::vector<shared_ptr<Card>> cards;
+	std::shared_ptr<Factory> f;
+
+    std::vector<shared_ptr<Card>> deck;
 	int health = 20;
 
     std::vector <shared_ptr<Minion>> field;
@@ -22,14 +25,13 @@ class Player
 	void addOpponent(shared_ptr<Player> O);
 	void TriggerOn();
 	void Activate(string name, shared_ptr<Minion> target);
-	void summon(char);
-	void gotograve(minion);
+	// void summon(char);
+	void gotograve(shared_ptr<Minion>);
 	void takeDamage(int);
-	void getLife();
+	int getLife();
 	
 	// the following is the effect
-	void powerupI(int,pos); // power up whoever use this 
-	void damegeO(int,shared_ptr<Player> target); // deal damage to chosen target
+	void damegeO(int); // deal damage to chosen target
 	void heal(int); // heal for player
 };
 
