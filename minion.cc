@@ -41,8 +41,7 @@ CType Minion::getType()
 	return CType::Minion;
 }
 
-bool Minion::isTrigger(Player &owner){
-    return 0; // just for test
+void Minion::addAtk(int a)
+{
+	atk += a;
 }
-
-

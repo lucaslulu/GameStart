@@ -18,7 +18,7 @@ void Card::addTarget(shared_ptr<Card> c)
   }
 }
 
-void Card::setDescription(string d)
+void setDesription(string d)
 {
   description += d;
 }
@@ -28,7 +28,7 @@ void Card::setDescription(string d)
     return name;
  }
 
-string Card::getDescription(){
+string Card::getdescription(){
     return description;
 }
  

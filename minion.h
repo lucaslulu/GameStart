@@ -24,7 +24,10 @@ public:
 //	virtual void useAbility(AbilityType t, Subject &owner) = 0;
 	void attackM(std::shared_ptr<Minion> m);
 	CType getType() override;
-	virtual bool isTrigger(Player &owner) override; // for test
+	virtual bool isTrigger(Player &owner) = 0; // for test
+
+	// The following is the effect work on the minion
+	void addAtk(int);
 };
 
 #endif
