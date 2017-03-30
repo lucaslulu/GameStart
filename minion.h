@@ -15,7 +15,7 @@ class Minion : public Card
 protected:
 	int atk, def; // attack and defend
 	int action;
-    std::vector<std::shared_ptr<Enchantment>> Enhance;
+    std::vector<std::shared_ptr<Enchantment>> Enhance;  //vectors of Enchantment used on the Minion Card
 
 public:
     Minion(int cost,int atk,int def, std::string name);
