@@ -15,5 +15,5 @@ const std::string EARTH_E = "Earth Elemental";
 class Factory{
 public:
 	Factory();
-	std::shared_ptr<Card> GenCard(std::string name);
+	std::shared_ptr<Card> genCard(std::string name);
 }

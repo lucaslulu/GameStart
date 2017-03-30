@@ -7,20 +7,19 @@ Card::Card(int cost,string name)
   description = "";
 }
   
-void Card::addTarget(shared_ptr<Card> c)
-{
-  if(c->getType() == CType::Minion)
+void Card::addTarget(shared_ptr<Card> c){
+    if(c->getType() == CType::Minion)
   {
-  	targetM.emplace_back(c);
+  	this->targetM.emplace_back(c);
   } else if(c->getType() == CType::Ritual)
   {
-  	targetM.emplace_back(c);
+  	this->targetR.emplace_back(c);
   }
 }
 
-void setDesription(string d)
+void Card::setDescription(string d)
 {
-  description += d;
+  description = d;
 }
 
  string Card::getName()
@@ -28,7 +27,7 @@ void setDesription(string d)
     return name;
  }
 
-string Card::getdescription(){
+string Card::getDescription(){
     return description;
 }
  

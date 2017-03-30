@@ -1,7 +1,8 @@
 #include "enchantment.h"
+using namespace std;
 
-Enchantment::Enchantment(int cost, string name,string description)
-: Card(cost,name,description) {}
+Enchantment::Enchantment(int cost, string name,string atk_change,string def_change, string active)
+: Card(cost,name),atk_change{atk_change},def_change{def_change},active{active} {}
   
 bool Enchantment::isTrigger(Player &owner)
 {
@@ -11,4 +12,13 @@ bool Enchantment::isTrigger(Player &owner)
 CType Enchantment::getType()
 {
 	return CType::Enchant;
+}
+string Enchantment::getatk_change(){
+    return atk_change;
+}
+string Enchantment::getdef_change(){
+    return atk_change;
+}
+string Enchantment::getactive(){
+    return active;
 }

@@ -1,6 +1,6 @@
 #ifndef _MINIONBASE_H_
 #define _MINIONBASE_H_
-#include "cardbase.h"
+#include "minion.h"
 
 class Air_Elemental : public Minion{
 
@@ -17,7 +17,7 @@ public:
 	~Fire_Elemental();
 	bool isTrigger(Player &owner);
 	void useAbility(AbilityType t, Player &owner);
-}
+};
 #endif
 
 class Earth_Elemental : public Minion{
@@ -26,4 +26,4 @@ class Earth_Elemental : public Minion{
 	~Earth_Elemental();
 	bool isTrigger(Player &owner);
 	void useAbility(AbilityType t, Player &owner);
-}
+};
