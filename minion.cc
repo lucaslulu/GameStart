@@ -19,7 +19,7 @@ void Minion::NewTurn()
 	action = 1;
 }
 
-void Minion::attack(std::shared_ptr<Minion> m)
+void Minion::attackM(std::shared_ptr<Minion> m)
 {
 	if(action == 0)
 	{
@@ -44,4 +44,13 @@ CType Minion::getType()
 void Minion::addAtk(int a)
 {
 	atk += a;
+}
+
+void Minion::addDef(int a)
+{
+    def += a;
+}
+
+void Minion::decorate(shared_ptr <Enchantment> enc){
+    Enhance.emplace_back(enc);
 }
