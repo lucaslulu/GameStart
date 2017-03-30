@@ -7,7 +7,7 @@
 #include <cstdlib>
 class Player;
 
-enum class CType {Ritual, Minion, Spell, Enchantment};
+enum class CType {Ritual, Minion, Spell, Enchant};
 
 class Minion;
 
@@ -28,7 +28,7 @@ public:
     Card(int cost,std::string name);
 	void addTarget(std::shared_ptr<Card> c);
 	virtual ~Card() = default;
-	void setDescription(string d);
+	void setDescription(std::string d);
 	virtual CType getType() = 0;
 	//virtual void useAbility(AbilityType t,Subject &owner) = 0;
 	// the effect differs based on the type of ability it uses.
@@ -37,6 +37,7 @@ public:
 
 	std::string getName();  // return name of card
     std::string getDescription(); //return a description of a card
+    virtual void printcard() = 0;
 };
 
 #endif
