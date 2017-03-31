@@ -20,7 +20,7 @@ public:
 	CType getType() override;
 	bool isTrigger(Player &owner) override;
     
-    //get the detail of the Enchantment
+    //get the details of the Enchantment
     std::string getatk_change();
     std::string getdef_change();
     std::string getactive();

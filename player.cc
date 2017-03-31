@@ -17,6 +17,18 @@ void Player::addOpponent(shared_ptr<Player> O)
 	opponent = O;
 }
 
+// used to load deck onto the player
+void Player::loadDeck(ifstream& infile)
+{
+	string name;
+	while(inflie >> name)
+	{
+		shared_ptr<Card> c = f->genCard(name);
+		deck.emplace_back(c);
+	}
+}
+
+// detect the trigger and use the triggered ability
 void Player::TriggerOn()
 {
 	for(auto c : field)

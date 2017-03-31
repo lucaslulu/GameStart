@@ -10,7 +10,7 @@ Factory::Factory() {
 	srand(time(0));
 }
 
-std::shared_ptr<Card> Factory::GenCard(std::string name)
+std::shared_ptr<Card> Factory::genCard(std::string name)
 {
 	if(name == AIR_E)
 	{
