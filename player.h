@@ -4,8 +4,9 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
-#include "cardbase.h"
+#include "card.h"
 #include "factory.h"
+using namespace std;
 
 class Player
 {	
@@ -13,18 +14,19 @@ class Player
 
     std::vector<shared_ptr<Card>> deck;
     string name;
+    int num; // player number
 	int health = 20;
 	int magic = 3;
 
     std::vector <shared_ptr<Minion>> field;
 	vector <shared_ptr<Minion>> grave;
 	shared_ptr<Ritual> secret;
-	vector <shared_ptr<Card>> hand;
+	vector<shared_ptr<Card>> hand;
 	shared_ptr<Player> opponent
 
 	public:
 
-	Player(string name);
+	Player(string name,int num);
 	~Player();
 	void loadDeck(ifstream& infile); // maybe it is not necessary
 	// void drawCard(); // draw a card from the deck randomly into hand.
@@ -35,6 +37,7 @@ class Player
 	void gotograve(shared_ptr<Minion>);
 	void takeDamage(int);
 	int getLife();
+    int getMagic();
 	
 	// the following is the effect
 	void damegeO(int); // deal damage to chosen target
@@ -42,6 +45,8 @@ class Player
 
 	// test methods
 	void printall();
+    vector<shared_ptr<Card>> gethand();
+    int getnum();
 };
 
 #endif
