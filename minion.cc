@@ -1,8 +1,8 @@
 #include "minion.h"
 using namespace std;
 
-Minion::Minion(int cost,int atk,int def,string Name)
-: Card(cost,Name), atk{atk}, def{def}, action{1} {}
+Minion::Minion(int cost,int atk,int def,string Name,int type,int abcost)
+: Card(cost,Name), atk{atk}, def{def}, action{1},type{type},abcost{abcost} {}
   
 int Minion::getAtk()
 {
@@ -53,4 +53,15 @@ void Minion::addDef(int a)
 
 void Minion::decorate(shared_ptr <Enchantment> enc){
     Enhance.emplace_back(enc);
+}
+
+int Minion::gettype(){
+    return type;
+}
+int Minion::getabcost(){
+    return abcost;
+}
+
+std::vector<std::shared_ptr<Enchantment>> Minion::getEnhance(){
+    return Enhance;
 }

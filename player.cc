@@ -10,8 +10,8 @@ void Player::getLife()
 	return health;
 }
 
-Player::Player(string name)
-	: name{name} {}
+Player::Player(string name, int num)
+: name{name} ,num{num}{}
 
 Player::~Player() {}
 
@@ -90,4 +90,19 @@ void Player::printall()
 	{
 		cout << o->getName();
 	}
+}
+
+
+
+vector<shared_ptr<Card>> Player::gethand(){
+    return hand;
+}
+
+int Player:: getnum(){
+    return num;
+}
+
+
+int Player::getmagic(){
+    return magic;
 }
