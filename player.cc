@@ -10,6 +10,9 @@ void Player::getLife()
 	return health;
 }
 
+Player::Player(string name)
+	: name{name} {}
+
 Player::~Player() {}
 
 void Player::addOpponent(shared_ptr<Player> O)
@@ -70,11 +73,21 @@ int Player::getLife()
 	return health;
 }
 
-void damegeO(int d); // deal damage to opponent
+void Player::damegeO(int d); // deal damage to opponent
 {
 	opponent->takeDamage(d);
 }
-void heal(int h) // heal for player
+void Player::heal(int h) // heal for player
 {
 	health += h;
+}
+
+
+// test one 
+void Player::printall()
+{
+	for(auto o : deck)
+	{
+		cout << o->getName();
+	}
 }
