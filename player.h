@@ -3,6 +3,7 @@
 #include "card.h"
 #include <vector>
 #include <fstream>
+#include <iostream>
 #include "cardbase.h"
 #include "factory.h"
 
@@ -11,6 +12,7 @@ class Player
 	std::shared_ptr<Factory> f; // factory used to make card.
 
     std::vector<shared_ptr<Card>> deck;
+    string name;
 	int health = 20;
 	int magic = 3;
 
@@ -22,6 +24,7 @@ class Player
 
 	public:
 
+	Player(string name);
 	~Player();
 	void loadDeck(ifstream& infile); // maybe it is not necessary
 	// void drawCard(); // draw a card from the deck randomly into hand.
@@ -36,6 +39,9 @@ class Player
 	// the following is the effect
 	void damegeO(int); // deal damage to chosen target
 	void heal(int); // heal for player
+
+	// test methods
+	void printall();
 };
 
 #endif

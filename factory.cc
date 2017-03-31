@@ -1,8 +1,5 @@
 #include "minionbase.h"
 #include "factory.h"
-#include <memory>
-#include <cstdlib>
-#include <vector>
 
 using namespace std;
 
